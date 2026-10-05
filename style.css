@@ -1,0 +1,324 @@
+/* Mobile First: сначала стили для смартфонов */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+    background: #fff;
+}
+
+a {
+    color: #145da0;
+}
+
+a:hover {
+    color: #0b3d91;
+}
+
+/* Шапка */
+.site-header {
+    width: 100%;
+    background: #72add5;
+    border-bottom: 1px solid #4f8eb8;
+}
+
+.header-inner {
+    width: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.logo {
+    width: 105px;
+    height: 105px;
+    flex: 0 0 auto;
+    border: 1px solid #4f8eb8;
+    border-radius: 50%;
+    background: #8bbbe0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 82px;
+    height: auto;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+    order: 2;
+}
+
+.main-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    order: 3;
+}
+
+.main-nav a {
+    display: block;
+    padding: 8px;
+    color: #16384e;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 12px 32px;
+}
+
+.content-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+ * В HTML список ссылок находится ПЕРЕД таблицей.
+ * На мобильном Flexbox order визуально ставит таблицу выше списка.
+ */
+#links {
+    order: 2;
+}
+
+#table {
+    order: 1;
+}
+
+#fragment {
+    order: 3;
+}
+
+.content-section {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+h1,
+h2 {
+    color: #16384e;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+ul {
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+li img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    border: 1px solid #4f8eb8;
+}
+
+th,
+td {
+    border: 1px solid #4f8eb8;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background: #5f9fc8;
+    color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eaf5fb;
+}
+
+tbody tr:nth-child(even) {
+    background: #d0e7f5;
+}
+
+/* Форма */
+form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group > label:not(.inline-label),
+.field-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #9bb9cc;
+    border-radius: 4px;
+    font: inherit;
+    background: #fff;
+}
+
+select {
+    min-height: 120px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.inline-label {
+    margin-right: 18px;
+}
+
+.inline-label input {
+    margin-right: 5px;
+}
+
+.checkbox-group {
+    margin-top: 6px;
+}
+
+button {
+    padding: 10px 24px;
+    border: 0;
+    border-radius: 4px;
+    background: #4f8eb8;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #39799f;
+}
+
+/* Футер */
+.site-footer {
+    width: 100%;
+    background: #72add5;
+    border-top: 1px solid #4f8eb8;
+}
+
+.footer-inner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 12px;
+    font-size: 18px;
+}
+
+/* Планшеты и десктопы */
+@media (min-width: 701px) {
+    .header-inner {
+        max-width: 960px;
+        min-height: 125px;
+        padding: 12px 18px;
+        flex-direction: row;
+        align-items: center;
+        gap: 18px;
+        text-align: left;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .site-title {
+        flex: 1 1 auto;
+        align-self: flex-end;
+        font-size: 28px;
+        order: 2;
+    }
+
+    .main-nav {
+        width: auto;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 24px;
+        order: 3;
+        align-self: flex-start;
+    }
+
+    .main-nav a {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 960px;
+        padding: 24px 18px 36px;
+    }
+
+    /* На больших экранах: список ссылок -> таблица -> форма. */
+    #links {
+        order: 1;
+    }
+
+    #table {
+        order: 2;
+    }
+
+    #fragment {
+        order: 3;
+    }
+
+    .footer-inner {
+        max-width: 960px;
+        padding: 24px 18px;
+    }
+}
