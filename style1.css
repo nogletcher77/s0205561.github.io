@@ -43,7 +43,7 @@ a:hover {
 .header-brand {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 43px;
     min-width: 0;
 }
 
@@ -239,6 +239,7 @@ button:hover {
     .header-brand {
         flex-direction: column;
         justify-content: center;
+        gap: 18px;
     }
 
     .logo {
