@@ -33,11 +33,17 @@ a:hover {
     width: 100%;
     min-height: 125px;
     margin: 0;
-    padding: 12px clamp(24px, 5vw, 70px);
+    padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+}
+
+.site-title {
+    margin-right: auto;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .header-brand {
