@@ -269,8 +269,7 @@ button:hover {
         min-height: 125px;
         padding: 12px 24px;
         flex-direction: row;
-        flex-wrap: nowrap; 
-        justify-content: space-between;
+        gap: 20px;
         align-items: center;
         text-align: left;
     }
@@ -280,11 +279,11 @@ button:hover {
     }
 
     .site-title {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
         align-self: center;
         font-size: 28px;
         order: 2;
-        margin-left: 20px; 
+        margin-left: auto; 
     }
 
     .main-nav {
@@ -303,8 +302,9 @@ button:hover {
     }
 
     .container {
-        max-width: none;
-        padding: 24px 40px 36px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 18px 36px;
     }
 
     /* На больших экранах: список ссылок -> таблица -> форма. */
@@ -322,6 +322,8 @@ button:hover {
 
     .footer-inner {
         max-width: none;
-        padding: 24px 40px;
+        width: 100%;
+        padding: 24px;
+        margin: 0;
     }
 }
