@@ -1,5 +1,6 @@
-/* Mobile First: сначала стили для смартфонов */
+/* Задание 3 — Mobile First, Flexbox и Media Queries */
 
+/* Базовые настройки */
 * {
     box-sizing: border-box;
 }
@@ -25,7 +26,9 @@ a:hover {
     color: #0b3d91;
 }
 
-/* Шапка */
+/* МОБИЛЬНАЯ ВЕРСИЯ — стили по умолчанию */
+
+/* Шапка занимает всю ширину экрана */
 .site-header {
     width: 100%;
     background: #72add5;
@@ -34,12 +37,12 @@ a:hover {
 
 .header-inner {
     width: 100%;
-    min-height: 0;
-    margin: 0 auto;
+    margin: 0;
     padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     text-align: center;
 }
@@ -65,7 +68,6 @@ a:hover {
 .site-title {
     font-size: 24px;
     font-weight: 700;
-    order: 2;
 }
 
 .main-nav {
@@ -73,16 +75,17 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
-    order: 3;
+    gap: 4px;
 }
 
 .main-nav a {
     display: block;
-    padding: 8px;
+    width: 100%;
+    padding: 8px 10px;
     color: #16384e;
     text-decoration: none;
     font-weight: 700;
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .main-nav a:hover {
@@ -92,25 +95,24 @@ a:hover {
 /* Основной контент */
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 20px 12px 32px;
 }
 
+/* Flex-контейнер нужен для изменения порядка блоков на смартфоне */
 .content-flex {
     display: flex;
     flex-direction: column;
 }
 
-/*
- * В HTML список ссылок находится ПЕРЕД таблицей.
- * На мобильном Flexbox order визуально ставит таблицу выше списка.
- */
-#links {
-    order: 2;
-}
-
+/* В HTML список ссылок расположен перед таблицей.
+   На смартфоне таблица показывается выше списка ссылок. */
 #table {
     order: 1;
+}
+
+#links {
+    order: 2;
 }
 
 #fragment {
@@ -206,6 +208,7 @@ input[type="date"],
 select,
 textarea {
     width: 100%;
+    max-width: 100%;
     padding: 9px 10px;
     border: 1px solid #9bb9cc;
     border-radius: 4px;
@@ -222,6 +225,7 @@ textarea {
 }
 
 .inline-label {
+    display: inline-block;
     margin-right: 18px;
 }
 
@@ -247,7 +251,7 @@ button:hover {
     background: #39799f;
 }
 
-/* Футер */
+/* Подвал */
 .site-footer {
     width: 100%;
     background: #72add5;
@@ -256,49 +260,40 @@ button:hover {
 
 .footer-inner {
     width: 100%;
-    margin: 0 auto;
-    padding: 20px 12px;
+    margin: 0;
+    padding: 24px 12px;
     font-size: 18px;
 }
 
-
+/* ПЛАНШЕТЫ И ДЕСКТОПЫ — дополнительные правила поверх мобильных */
 @media (min-width: 701px) {
     .header-inner {
-        max-width: none;
-        width: 100%;
         min-height: 125px;
         padding: 12px 24px;
-        display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .logo {
-        align-self: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 24px;
     }
 
     .site-title {
-        flex: 0 1 auto;
-        align-self: center;
+        margin-right: auto;
         font-size: 28px;
-        order: 2;
     }
 
     .main-nav {
         width: auto;
-        flex: 0 0 auto;
         flex-direction: row;
-        align-items: center;
         justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
         gap: 24px;
-        order: 3;
-        align-self: center;
     }
 
     .main-nav a {
-        padding: 0;
+        width: auto;
+        padding: 6px 0;
+        background: transparent;
     }
 
     .container {
@@ -307,7 +302,8 @@ button:hover {
         padding: 24px 18px 36px;
     }
 
-    /* На больших экранах: список ссылок -> таблица -> форма. */
+    /* На больших экранах возвращаем исходный порядок HTML:
+       сначала список гиперссылок, затем таблица. */
     #links {
         order: 1;
     }
@@ -316,14 +312,13 @@ button:hover {
         order: 2;
     }
 
-    #fragment {
-        order: 3;
+    .content-section {
+        margin-bottom: 36px;
     }
 
     .footer-inner {
-        max-width: none;
-        width: 100%;
-        padding: 24px;
-        margin: 0;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 18px;
     }
 }
