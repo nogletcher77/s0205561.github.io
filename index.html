@@ -3,62 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Учебная страница: гиперссылки, таблица и форма">
     <title>Задание 4 — Учебная страница</title>
 
-    <!-- Bootstrap 5: сетка, адаптивность и spacing utilities -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <!-- Собственные стили страницы -->
+    <!-- Bootstrap 5: сетка, адаптивность, отступы и элементы форм -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="site-header">
-    <div class="container">
-        <div class="row align-items-center g-3 py-3">
-            <div class="col-12 col-md-2 text-center text-md-start">
-                <a class="logo" href="https://kubsu.ru/" title="КубГУ">
-                    <img
-                        src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png"
-                        alt="Логотип КубГУ"
-                    >
-                </a>
+
+<header class="site-header border-bottom">
+    <div class="container-fluid py-3">
+        <div class="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-4">
+            <a class="logo flex-shrink-0" href="https://kubsu.ru/" title="КубГУ">
+                <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png"
+                     alt="Логотип КубГУ">
+            </a>
+
+            <div class="site-title text-center text-md-start me-md-auto">
+                Учебная страница
             </div>
 
-            <div class="col-12 col-md-6 text-center text-md-start">
-                <div class="site-title">Учебная страница</div>
-            </div>
-
-            <nav class="col-12 col-md-4" aria-label="Основное меню">
-                <div class="d-flex flex-column flex-md-row justify-content-md-end gap-2 gap-md-4 text-center text-md-end">
-                    <a href="#links">Гиперссылки</a>
-                    <a href="#table">Таблица</a>
-                    <a href="#fragment">Форма</a>
-                </div>
+            <nav class="main-nav nav flex-column flex-md-row align-items-stretch align-items-md-center gap-1 gap-md-4"
+                 aria-label="Основное меню">
+                <a class="nav-link" href="#links">Гиперссылки</a>
+                <a class="nav-link" href="#table">Таблица</a>
+                <a class="nav-link" href="#fragment">Форма</a>
             </nav>
         </div>
     </div>
 </header>
 
-<main class="container py-4">
+<main class="container py-4 py-md-5">
     <div class="row g-4">
-        <!-- На мобильном таблица идет перед списком, на md+ — после списка -->
-        <section id="links" class="content-section col-12 col-lg-7 order-2 order-lg-1">
-            <h1 class="h2 mb-3">Список гиперссылок</h1>
+        <!-- На телефоне таблица выше списка, с ширины md порядок исходный -->
+        <section id="links" class="content-section col-12 order-2 order-md-1">
+            <h1 class="section-title">Список гиперссылок</h1>
 
-            <ul class="mb-0">
+            <ul>
                 <li><a href="http://kubsu.ru/">Главная страница kubsu</a></li>
                 <li><a href="https://kubsu.ru/">Главная страница kubsu в протоколе https</a></li>
                 <li>
                     <a href="https://kubsu.ru/">
-                        <img
-                            src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png"
-                            alt="Логотип КубГУ"
-                            width="90"
-                        >
+                        <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png"
+                             alt="Логотип КубГУ" width="90">
                     </a>
                 </li>
                 <li><a href="/internal-page">Сокращенная на внутреннюю страницу</a></li>
@@ -73,15 +64,10 @@
                 <li>Пустой текст, и <a href="https://kubsu.ru/">контекстная ссылка внутри текста</a>.</li>
                 <li><a href="https://ru.wikipedia.org/wiki/HTML#История">Фрагмент стороннего сайта</a></li>
                 <li>
-                    <p class="mb-2">Кнопки-ссылки:</p>
-                    <img
-                        src="https://avatars.mds.yandex.net/i?id=eb5385a3d8c7ee358acfe9ac3f2e7e71_l-5231564-images-thumbs&amp;n=13"
-                        alt="Карта"
-                        usemap="#workmap"
-                        class="img-fluid"
-                        width="300"
-                        height="150"
-                    >
+                    <p>Кнопки-ссылки:</p>
+                    <img class="img-fluid map-image"
+                         src="https://avatars.mds.yandex.net/i?id=eb5385a3d8c7ee358acfe9ac3f2e7e71_l-5231564-images-thumbs&amp;n=13"
+                         alt="Карта" usemap="#workmap" width="300" height="150">
                     <map name="workmap">
                         <area shape="rect" coords="0,0,150,150" alt="Лево" href="https://kubsu.ru/">
                         <area shape="circle" coords="225,75,50" alt="Право" href="https://www.google.com/">
@@ -92,8 +78,8 @@
                 <li><a href="https://example.com" rel="nofollow">Ссылка с rel="nofollow"</a></li>
                 <li><a href="https://example.com" rel="noindex">Ссылка с rel="noindex"</a></li>
                 <li>
-                    <p class="mb-2">Нумерованный список ссылок:</p>
-                    <ol class="mb-0">
+                    <p>Нумерованный список ссылок:</p>
+                    <ol>
                         <li><a href="https://kubsu.ru/" title="Главная">Первая ссылка</a></li>
                         <li><a href="https://kubsu.ru/about" title="О нас">Вторая ссылка</a></li>
                         <li><a href="https://kubsu.ru/contacts" title="Контакты">Третья ссылка</a></li>
@@ -103,17 +89,17 @@
             </ul>
         </section>
 
-        <section id="table" class="content-section col-12 col-lg-5 order-1 order-lg-2">
-            <h2 class="h3 mb-3">Таблица</h2>
+        <section id="table" class="content-section col-12 order-1 order-md-2">
+            <h2 class="section-title">Таблица</h2>
 
             <div class="table-responsive">
-                <table class="table table-bordered table-striped mb-0">
+                <table class="table table-bordered align-middle mb-0">
                     <thead>
                         <tr>
-                            <th>№</th>
-                            <th>Предмет</th>
-                            <th>Преподаватель</th>
-                            <th>Оценка</th>
+                            <th scope="col">№</th>
+                            <th scope="col">Предмет</th>
+                            <th scope="col">Преподаватель</th>
+                            <th scope="col">Оценка</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -154,48 +140,46 @@
         </section>
 
         <section id="fragment" class="content-section col-12 order-3">
-            <h2 class="h3 mb-3">Форма</h2>
+            <h2 class="section-title">Форма</h2>
 
-            <form action="#" method="post" class="row g-3">
-                <div class="col-12 col-md-6">
+            <form action="#" method="post" class="form-content">
+                <div class="mb-3">
                     <label for="fio" class="form-label fw-bold">ФИО:</label>
-                    <input id="fio" type="text" name="fio" class="form-control" autofocus required>
+                    <input id="fio" class="form-control" type="text" name="fio" autofocus required>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="mb-3">
                     <label for="phone" class="form-label fw-bold">Телефон:</label>
-                    <input id="phone" type="tel" name="phone" class="form-control">
+                    <input id="phone" class="form-control" type="tel" name="phone">
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="mb-3">
                     <label for="email" class="form-label fw-bold">E-mail:</label>
-                    <input id="email" type="email" name="email" class="form-control">
+                    <input id="email" class="form-control" type="email" name="email">
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="mb-3">
                     <label for="birthdate" class="form-label fw-bold">Дата рождения:</label>
-                    <input id="birthdate" type="date" name="birthdate" class="form-control">
+                    <input id="birthdate" class="form-control" type="date" name="birthdate">
                 </div>
 
-                <div class="col-12">
-                    <span class="form-label d-block fw-bold">Пол:</span>
-                    <div class="d-flex flex-wrap gap-3">
-                        <label class="form-check">
-                            <input type="radio" name="gender" value="male" class="form-check-input">
-                            <span class="form-check-label">Мужской</span>
-                        </label>
-                        <label class="form-check">
-                            <input type="radio" name="gender" value="female" class="form-check-input">
-                            <span class="form-check-label">Женский</span>
-                        </label>
+                <fieldset class="mb-3">
+                    <legend class="form-label fw-bold">Пол:</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="gender-male" type="radio" name="gender" value="male">
+                        <label class="form-check-label" for="gender-male">Мужской</label>
                     </div>
-                </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="gender-female" type="radio" name="gender" value="female">
+                        <label class="form-check-label" for="gender-female">Женский</label>
+                    </div>
+                </fieldset>
 
-                <div class="col-12 col-md-8">
+                <div class="mb-3">
                     <label for="langs" class="form-label fw-bold">
                         Любимый язык программирования (зажми Ctrl, чтобы выбрать несколько):
                     </label>
-                    <select id="langs" name="langs[]" multiple size="6" class="form-select">
+                    <select id="langs" class="form-select" name="langs[]" multiple size="6">
                         <option value="Pascal">Pascal</option>
                         <option value="C">C</option>
                         <option value="C++">C++</option>
@@ -210,30 +194,29 @@
                     </select>
                 </div>
 
-                <div class="col-12 col-md-8">
+                <div class="mb-3">
                     <label for="bio" class="form-label fw-bold">Биография:</label>
-                    <textarea id="bio" name="bio" rows="5" class="form-control"></textarea>
+                    <textarea id="bio" class="form-control" name="bio" rows="5"></textarea>
                 </div>
 
-                <div class="col-12">
-                    <div class="form-check">
-                        <input type="checkbox" id="contract" name="contract" class="form-check-input">
-                        <label for="contract" class="form-check-label">С контрактом ознакомлен (а)</label>
-                    </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="contract" name="contract">
+                    <label class="form-check-label" for="contract">
+                        С контрактом ознакомлен (а)
+                    </label>
                 </div>
 
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
-                </div>
+                <button class="btn btn-primary" type="submit">Сохранить</button>
             </form>
         </section>
     </div>
 </main>
 
-<footer class="site-footer">
-    <div class="container py-3">
-        (c) Сергей Синица
+<footer class="site-footer border-top">
+    <div class="container py-4">
+        <p class="footer-text mb-0">(c) Сергей Синица</p>
     </div>
 </footer>
+
 </body>
 </html>

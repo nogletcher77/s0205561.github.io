@@ -1,10 +1,10 @@
-/* Собственные стили.
-   Сетка, адаптивность и управление margin/padding выполнены средствами Bootstrap.
-   Bootstrap работает по принципу Mobile First. */
+/* Задание 4 — оформление поверх Bootstrap 5.
+   Сетка, адаптивные размеры, отступы и формы реализованы классами Bootstrap. */
 
-/* Базовые стили */
-* {
-    box-sizing: border-box;
+:root {
+    --page-blue: #72add5;
+    --border-blue: #4f8eb8;
+    --heading-blue: #16384e;
 }
 
 html {
@@ -12,12 +12,10 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
     color: #222;
     background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 a {
@@ -28,23 +26,22 @@ a:hover {
     color: #0b3d91;
 }
 
-/* Шапка */
-.site-header {
-    width: 100%;
-    background: #72add5;
-    border-bottom: 1px solid #4f8eb8;
+.site-header,
+.site-footer {
+    background: var(--page-blue);
+    border-color: var(--border-blue) !important;
 }
 
 .logo {
     width: 105px;
     height: 105px;
-    border: 1px solid #4f8eb8;
-    border-radius: 50%;
-    background: #8bbbe0;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border: 1px solid var(--border-blue);
+    border-radius: 50%;
+    background: #8bbbe0;
 }
 
 .logo img {
@@ -53,80 +50,101 @@ a:hover {
 }
 
 .site-title {
+    color: var(--heading-blue);
     font-size: 24px;
     font-weight: 700;
 }
 
-.main-nav a {
+.main-nav .nav-link {
     color: #16384e;
-    text-decoration: none;
     font-weight: 700;
+    text-decoration: none;
 }
 
-.main-nav a:hover {
+.main-nav .nav-link:hover {
+    color: #0b3d91;
     text-decoration: underline;
 }
 
-/* Основной контент */
+.section-title {
+    color: var(--heading-blue);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
 .content-section {
-    width: 100%;
+    min-width: 0;
 }
 
-h1,
-h2 {
-    color: #16384e;
+.content-section li {
+    margin-bottom: 0.45rem;
 }
 
-li img {
+.content-section li img {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
 }
 
-/* Таблица */
+.map-image {
+    width: 300px;
+}
+
+.table-responsive {
+    border: 1px solid var(--border-blue);
+}
+
 .table {
-    border-color: #4f8eb8;
+    min-width: 500px;
+    border-color: var(--border-blue);
 }
 
 .table thead th {
-    background: #5f9fc8;
     color: #fff;
+    background: #5f9fc8;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-    --bs-table-bg-type: #eaf5fb;
+.table tbody tr:nth-child(odd) > * {
+    background: #eaf5fb;
 }
 
-.table-striped > tbody > tr:nth-of-type(even) > * {
-    --bs-table-bg-type: #d0e7f5;
+.table tbody tr:nth-child(even) > * {
+    background: #d0e7f5;
 }
 
-/* Форма */
+.form-content {
+    width: 100%;
+    max-width: 700px;
+}
+
 .form-control,
 .form-select {
     border-color: #9bb9cc;
 }
 
-.btn-primary {
-    background: #4f8eb8;
+.form-control:focus,
+.form-select:focus {
     border-color: #4f8eb8;
+    box-shadow: 0 0 0 0.2rem rgba(79, 142, 184, 0.2);
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-    background: #39799f;
-    border-color: #39799f;
+.btn-primary {
+    --bs-btn-bg: #4f8eb8;
+    --bs-btn-border-color: #4f8eb8;
+    --bs-btn-hover-bg: #39799f;
+    --bs-btn-hover-border-color: #39799f;
+    --bs-btn-active-bg: #39799f;
+    --bs-btn-active-border-color: #39799f;
 }
 
-/* Футер */
-.site-footer {
-    width: 100%;
-    background: #72add5;
-    border-top: 1px solid #4f8eb8;
+.footer-text {
+    color: #16384e;
+    font-size: 1.125rem;
+    font-weight: 500;
 }
 
-/* Небольшая корректировка размера заголовка на больших экранах.
-   Само расположение остается Bootstrap Grid. */
 @media (min-width: 768px) {
     .site-title {
         font-size: 28px;
