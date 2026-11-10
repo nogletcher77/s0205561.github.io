@@ -268,10 +268,11 @@ button:hover {
         width: 100%;
         min-height: 125px;
         padding: 12px 24px;
+        display: flex;
         flex-direction: row;
-        gap: 20px;
+        justify-content: flex-start;
+        gap: 15px;
         align-items: center;
-        text-align: left;
     }
 
     .logo {
@@ -283,7 +284,6 @@ button:hover {
         align-self: center;
         font-size: 28px;
         order: 2;
-        margin-left: auto; 
     }
 
     .main-nav {
