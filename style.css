@@ -261,15 +261,17 @@ button:hover {
     font-size: 18px;
 }
 
-/* Планшеты и десктопы */
+
 @media (min-width: 701px) {
     .header-inner {
-        max-width: 960px;
+        max-width: none;
+        width: 100%;
         min-height: 125px;
-        padding: 12px 18px;
+        padding: 12px 24px;
         flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: space-between;
         align-items: center;
-        gap: 18px;
         text-align: left;
     }
 
@@ -279,20 +281,21 @@ button:hover {
 
     .site-title {
         flex: 1 1 auto;
-        align-self: flex-end;
+        align-self: center;
         font-size: 28px;
         order: 2;
+        margin-left: 20px; 
     }
 
     .main-nav {
         width: auto;
         flex: 0 0 auto;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-end;
         gap: 24px;
         order: 3;
-        align-self: flex-start;
+        align-self: center;
     }
 
     .main-nav a {
@@ -300,8 +303,8 @@ button:hover {
     }
 
     .container {
-        max-width: 960px;
-        padding: 24px 18px 36px;
+        max-width: none;
+        padding: 24px 40px 36px;
     }
 
     /* На больших экранах: список ссылок -> таблица -> форма. */
@@ -318,7 +321,7 @@ button:hover {
     }
 
     .footer-inner {
-        max-width: 960px;
-        padding: 24px 18px;
+        max-width: none;
+        padding: 24px 40px;
     }
 }
