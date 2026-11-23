@@ -52,10 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
         message.className = "mt-3 text-success";
     }
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-    });
-
     productRadios.forEach(function (radio) {
         radio.addEventListener("change", calculatePrice);
     });
